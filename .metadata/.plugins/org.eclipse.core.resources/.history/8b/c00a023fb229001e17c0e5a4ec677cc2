@@ -1,0 +1,13 @@
+package principal;
+
+import javax.swing.JOptionPane;
+
+public class Principal {
+	
+	private static Object[] lista = {"algo", "algo1", "algo2", "algo3", "algo4", "algo5"}; 
+	
+	public static void main(String[] args) {
+		String option = JOptionPane.showInputDialog(null, "Mensaje de texto", "Algo", JOptionPane.PLAIN_MESSAGE, lista);
+		System.out.println("Seleccion " + option);
+	}
+}

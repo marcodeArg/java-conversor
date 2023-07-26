@@ -1,0 +1,33 @@
+package api;
+
+import java.net.*;
+
+public class Exchange {
+
+	String apiUrl = "https://api.exchangerate.host/symbols";
+	
+	public void getSymbols() 
+	{
+		try {
+			URI url = new URI(apiUrl);
+			
+			HttpURLConnection connection = (HttpURLConnection) url.toURL().openConnection();
+			
+			if (connection.getResponseCode() == connection.HTTP_OK) {
+				
+			}
+			
+			
+			
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			
+		}
+		
+	}
+	
+	
+}

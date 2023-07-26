@@ -1,0 +1,67 @@
+package api;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.*;
+import java.util.Scanner;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public class Exchange {
+
+	String static apiUrl = "https://api.exchangerate.host/symbols";
+	
+	
+	public static void main(String[] args) {
+		getSymbols();
+	}
+	
+	public static void getSymbols() 
+	{
+		try {
+			URI uri = new URI(apiUrl);
+			
+			HttpURLConnection request = (HttpURLConnection) uri.toURL().openConnection();
+			request.setRequestMethod("GET");
+			request.connect();
+			int statusCode = request.getResponseCode();
+			
+			if (statusCode == request.HTTP_OK) 
+			{
+				 StringBuilder informacion = new StringBuilder();
+				 Scanner scaner = new Scanner(uri.toURL().openStream());
+				 
+				 while(scaner.hasNext()) {
+					 informacion.append(scaner.nextLine());
+				 }
+				 
+				 scaner.close();
+				 
+				 JSONArray jsonInfo = new JSONArray(informacion.toString());
+				 JSONObject jsonObject = jsonInfo.getJSONObject(0);
+				 
+				 System.out.println("Primero : " + jsonObject.toString());
+				 
+			} else {
+				throw new RuntimeException("The status code was: " + statusCode);
+			}
+			
+			
+			
+			
+
+			
+			
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			
+		}
+		
+	}
+	
+	
+}
