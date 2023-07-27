@@ -11,9 +11,9 @@ public class Exchange {
 	private String apiUrl = "https://api.exchangerate.host/symbols";
 	
 	
-	public ArrayList<String> getSymbols() 
+	public ArrayList getSymbols() 
 	{
-		ArrayList<String> listaSimbolos = new ArrayList<String>();
+		ArrayList listaSimbolos = new ArrayList();
 		
 		try {
 			URI uri = new URI(apiUrl);
@@ -52,12 +52,9 @@ public class Exchange {
 			
 			request.disconnect();
 			
-			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
-		
-		return listaSimbolos;
+		} 
 	}
 	
 	

@@ -1,20 +1,21 @@
 package api;
 
 import java.net.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.json.JSONObject;
 
 public class Exchange {
 
-	private String apiUrl = "https://api.exchangerate.host/symbols";
+	private static String apiUrl = "https://api.exchangerate.host/symbols";
 	
 	
-	public ArrayList<String> getSymbols() 
+	public static void main(String[] args) {
+		getSymbols();
+	}
+	
+	public static void getSymbols() 
 	{
-		ArrayList<String> listaSimbolos = new ArrayList<String>();
-		
 		try {
 			URI uri = new URI(apiUrl);
 			
@@ -43,8 +44,8 @@ public class Exchange {
 				 for (String codigo : symbolsObject.keySet()) {
 		                JSONObject moneda = symbolsObject.getJSONObject(codigo);
 		                String descripcion = moneda.getString("description");
-		                listaSimbolos.add(codigo + " - " + descripcion);
-				 } 
+		                System.out.println(codigo + " - " + descripcion);
+				 }
 				 
 			} else {
 				throw new RuntimeException("The status code was: " + statusCode);
@@ -52,12 +53,9 @@ public class Exchange {
 			
 			request.disconnect();
 			
-			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
-		
-		return listaSimbolos;
+		} 
 	}
 	
 	

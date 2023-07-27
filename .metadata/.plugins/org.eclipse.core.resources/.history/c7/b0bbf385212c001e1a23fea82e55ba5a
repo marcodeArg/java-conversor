@@ -11,10 +11,8 @@ public class Exchange {
 	private String apiUrl = "https://api.exchangerate.host/symbols";
 	
 	
-	public ArrayList<String> getSymbols() 
+	public ArrayList getSymbols() 
 	{
-		ArrayList<String> listaSimbolos = new ArrayList<String>();
-		
 		try {
 			URI uri = new URI(apiUrl);
 			
@@ -43,7 +41,7 @@ public class Exchange {
 				 for (String codigo : symbolsObject.keySet()) {
 		                JSONObject moneda = symbolsObject.getJSONObject(codigo);
 		                String descripcion = moneda.getString("description");
-		                listaSimbolos.add(codigo + " - " + descripcion);
+		                System.out.println(codigo + " - " + descripcion);
 				 } 
 				 
 			} else {
@@ -52,12 +50,9 @@ public class Exchange {
 			
 			request.disconnect();
 			
-			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
-		
-		return listaSimbolos;
+		} 
 	}
 	
 	

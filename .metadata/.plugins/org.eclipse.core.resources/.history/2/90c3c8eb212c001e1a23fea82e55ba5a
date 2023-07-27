@@ -11,7 +11,7 @@ public class Exchange {
 	private String apiUrl = "https://api.exchangerate.host/symbols";
 	
 	
-	public ArrayList<String> getSymbols() 
+	public ArrayList getSymbols() 
 	{
 		ArrayList<String> listaSimbolos = new ArrayList<String>();
 		
