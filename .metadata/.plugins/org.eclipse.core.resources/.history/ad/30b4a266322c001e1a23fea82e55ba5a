@@ -2,8 +2,6 @@ package api;
 
 import java.net.*;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Scanner;
 
 import org.json.JSONObject;
@@ -15,7 +13,7 @@ public class Exchange {
 	
 	public ArrayList<String> getSymbols() 
 	{
-		ArrayList<String> symbolsArray = new ArrayList<String>();
+		ArrayList<String> listaSimbolos = new ArrayList<String>();
 		
 		try {
 			URI uri = new URI(apiUrl);
@@ -45,7 +43,7 @@ public class Exchange {
 				 for (String codigo : symbolsObject.keySet()) {
 		                JSONObject moneda = symbolsObject.getJSONObject(codigo);
 		                String descripcion = moneda.getString("description");
-		                symbolsArray.add(codigo + " - " + descripcion);
+		                listaSimbolos.add(codigo + " - " + descripcion);
 				 } 
 				 
 			} else {
@@ -59,9 +57,7 @@ public class Exchange {
 			System.out.println(e.getMessage());
 		}
 		
-		Collections.sort(symbolsArray);
-		
-		return symbolsArray;
+		return listaSimbolos;
 	}
 	
 	

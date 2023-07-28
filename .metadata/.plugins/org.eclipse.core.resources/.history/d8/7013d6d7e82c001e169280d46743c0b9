@@ -2,8 +2,6 @@ package api;
 
 import java.net.*;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Scanner;
 
 import org.json.JSONObject;
@@ -58,8 +56,6 @@ public class Exchange {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
-		Collections.sort(symbolsArray);
 		
 		return symbolsArray;
 	}

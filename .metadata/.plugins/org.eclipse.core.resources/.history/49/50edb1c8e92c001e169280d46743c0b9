@@ -43,9 +43,9 @@ public class Exchange {
 				 
 				 
 				 for (String codigo : symbolsObject.keySet()) {
-		                JSONObject moneda = symbolsObject.getJSONObject(codigo);
-		                String descripcion = moneda.getString("description");
-		                symbolsArray.add(codigo + " - " + descripcion);
+		                //JSONObject moneda = symbolsObject.getJSONObject(codigo);
+		                //String descripcion = moneda.getString("description");
+		                symbolsArray.add(codigo);
 				 } 
 				 
 			} else {
