@@ -1,6 +1,5 @@
 package principal;
 
-import api.Exchange;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -18,8 +17,6 @@ public class Ventana extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtAmount;
-	
-	Exchange ex = new Exchange();
 
 	/**
 	 * Launch the application.
@@ -70,16 +67,7 @@ public class Ventana extends JFrame {
 		JComboBox cbFrom = new JComboBox();
 		cbFrom.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		cbFrom.setBounds(27, 69, 130, 22);
-		
-		// Tendria que hacer un for o un foreach
-		//cbFrom.addItem(ex.getSymbols());
-		
-		
-		//Tengo que pensar como haria esto
-		
 		contentPane.add(cbFrom);
-		
-		
 		
 		JLabel lblAmount = new JLabel("Amount:");
 		lblAmount.setFont(new Font("Tahoma", Font.PLAIN, 13));

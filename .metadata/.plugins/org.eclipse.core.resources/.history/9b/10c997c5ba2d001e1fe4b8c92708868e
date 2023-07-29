@@ -13,7 +13,7 @@ public class Exchange {
 	
 	public String apiConnection(String url) 
 	{
-		StringBuilder informacion = new StringBuilder();
+		StringBuilder informacion;
 		
 		try {
 			URI uri = new URI(apiUrl);
@@ -25,6 +25,7 @@ public class Exchange {
 			
 			if (statusCode == request.HTTP_OK) 
 			{
+				 informacion = new StringBuilder();
 				 Scanner scaner = new Scanner(uri.toURL().openStream());
 				 
 				 while(scaner.hasNext()) {

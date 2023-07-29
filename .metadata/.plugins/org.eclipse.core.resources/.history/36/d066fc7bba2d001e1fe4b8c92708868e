@@ -11,42 +11,6 @@ public class Exchange {
 
 	private String apiUrl = "https://api.exchangerate.host/symbols";
 	
-	public String apiConnection(String url) 
-	{
-		StringBuilder informacion = new StringBuilder();
-		
-		try {
-			URI uri = new URI(apiUrl);
-			
-			HttpURLConnection request = (HttpURLConnection) uri.toURL().openConnection();
-			request.setRequestMethod("GET");
-			request.connect();
-			int statusCode = request.getResponseCode();
-			
-			if (statusCode == request.HTTP_OK) 
-			{
-				 Scanner scaner = new Scanner(uri.toURL().openStream());
-				 
-				 while(scaner.hasNext()) {
-					 informacion.append(scaner.nextLine());
-				 }
-				 
-				 scaner.close();
-				 
-			} else {
-				throw new RuntimeException("The status code was: " + statusCode);
-			}
-			
-			request.disconnect();
-			
-			
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		
-		return informacion.toString();
-	}
-	
 	
 	public ArrayList<String> getSymbols() 
 	{

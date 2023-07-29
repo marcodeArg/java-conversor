@@ -71,11 +71,7 @@ public class Ventana extends JFrame {
 		cbFrom.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		cbFrom.setBounds(27, 69, 130, 22);
 		
-		// Tendria que hacer un for o un foreach
-		//cbFrom.addItem(ex.getSymbols());
-		
-		
-		//Tengo que pensar como haria esto
+		cbFrom.addItem(ex.getSymbols());
 		
 		contentPane.add(cbFrom);
 		

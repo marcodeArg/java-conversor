@@ -74,9 +74,6 @@ public class Ventana extends JFrame {
 		// Tendria que hacer un for o un foreach
 		//cbFrom.addItem(ex.getSymbols());
 		
-		
-		//Tengo que pensar como haria esto
-		
 		contentPane.add(cbFrom);
 		
 		

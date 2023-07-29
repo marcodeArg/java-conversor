@@ -13,8 +13,6 @@ public class Exchange {
 	
 	public String apiConnection(String url) 
 	{
-		StringBuilder informacion = new StringBuilder();
-		
 		try {
 			URI uri = new URI(apiUrl);
 			
@@ -25,6 +23,7 @@ public class Exchange {
 			
 			if (statusCode == request.HTTP_OK) 
 			{
+				 StringBuilder informacion = new StringBuilder();
 				 Scanner scaner = new Scanner(uri.toURL().openStream());
 				 
 				 while(scaner.hasNext()) {
@@ -44,7 +43,7 @@ public class Exchange {
 			System.out.println(e.getMessage());
 		}
 		
-		return informacion.toString();
+		return scaner.ToString()
 	}
 	
 	
