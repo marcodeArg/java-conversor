@@ -1,9 +1,9 @@
 package principal;
 
-//import java.awt.Component;
+import java.awt.Component;
 import java.util.ArrayList;
 
-//import javax.swing.Icon;
+import javax.swing.Icon;
 import javax.swing.JOptionPane;
 import api.Exchange;
 
@@ -15,7 +15,7 @@ public class Principal {
 		Exchange objExch = new Exchange();
 		ArrayList<String> listaSimbolos = new ArrayList<String>();
 		
-		objExch.apiConnection("https://api.exchangerate.host/symbols");
+		listaSimbolos = objExch.getSymbols();
 		
 		String[] lista = listaSimbolos.toArray(new String[0]);
 		

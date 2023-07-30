@@ -52,6 +52,8 @@ public class Exchange {
 	
 	public ArrayList<String> getSymbols(String json) 
 	{
+		
+		
 		ArrayList<String> symbolsArray = new ArrayList<String>();
 		
 		
@@ -62,8 +64,20 @@ public class Exchange {
 		for (String code : symbolsObject.keySet()) {
 			JSONObject currencyObject = symbolsObject.getJSONObject(code);
 			String currencyCode = currencyObject.getString("code");
-			symbolsArray.add(currencyCode);
 		}
+		
+		
+				// System.out.println(informacion);
+				// JSONObject jsonObject = new JSONObject(informacion.toString());
+				// JSONObject symbolsObject = jsonObject.getJSONObject("symbols");
+				 
+				 
+				 
+				 //for (String codigo : symbolsObject.keySet()) {
+		        //        JSONObject moneda = symbolsObject.getJSONObject(codigo);
+		        //        String descripcion = moneda.getString("description");
+		        //        symbolsArray.add(codigo + " - " + descripcion);
+
 		
 		Collections.sort(symbolsArray);
 		

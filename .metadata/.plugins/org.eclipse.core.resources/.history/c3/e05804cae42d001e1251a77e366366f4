@@ -1,9 +1,9 @@
 package principal;
 
-//import java.awt.Component;
+import java.awt.Component;
 import java.util.ArrayList;
 
-//import javax.swing.Icon;
+import javax.swing.Icon;
 import javax.swing.JOptionPane;
 import api.Exchange;
 
@@ -15,19 +15,17 @@ public class Principal {
 		Exchange objExch = new Exchange();
 		ArrayList<String> listaSimbolos = new ArrayList<String>();
 		
-		objExch.apiConnection("https://api.exchangerate.host/symbols");
+		listaSimbolos = objExch.getSymbols();
 		
 		String[] lista = listaSimbolos.toArray(new String[0]);
 		
 		String cantidad = JOptionPane.showInputDialog(null, "Ingrese la cantidad a convertir:", "Conversor de Monedas", JOptionPane.PLAIN_MESSAGE);
 		
-		/*
-		 * if(validarNumeros(cantidad)) {
+		if(validarNumeros(cantidad)) {
 			String monedaOrigen = (String) JOptionPane.showInputDialog(null, "Seleccione la divisa de origen:", "Conversor de Monedas", JOptionPane.PLAIN_MESSAGE, null, lista, lista[0]);
 			String monedaDestino = (String) JOptionPane.showInputDialog(null, "Seleccione la divisa de destino:", "Conversor de Monedas", JOptionPane.PLAIN_MESSAGE, null, lista, lista[0]);
 		}
-		 */
-
+		
 		// showInputDialog(Component parentComponent, Object message, String title, int messageType, Icon icon, Object[] selectionValues, Object initialSelectionValue)
 		
         

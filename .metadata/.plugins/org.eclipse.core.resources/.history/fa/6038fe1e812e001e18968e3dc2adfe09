@@ -52,6 +52,8 @@ public class Exchange {
 	
 	public ArrayList<String> getSymbols(String json) 
 	{
+		
+		
 		ArrayList<String> symbolsArray = new ArrayList<String>();
 		
 		

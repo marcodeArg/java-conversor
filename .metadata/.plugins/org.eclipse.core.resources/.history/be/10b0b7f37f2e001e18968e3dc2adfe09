@@ -15,7 +15,7 @@ public class Principal {
 		Exchange objExch = new Exchange();
 		ArrayList<String> listaSimbolos = new ArrayList<String>();
 		
-		objExch.apiConnection("https://api.exchangerate.host/symbols");
+		listaSimbolos = objExch.apiConnection("https://api.exchangerate.host/symbols");
 		
 		String[] lista = listaSimbolos.toArray(new String[0]);
 		
