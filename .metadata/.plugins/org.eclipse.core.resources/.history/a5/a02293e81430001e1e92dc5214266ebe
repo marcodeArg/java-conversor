@@ -8,8 +8,10 @@ import java.util.Scanner;
 import org.json.JSONObject;
 
 public class Exchange {
+
+	private String apiUrl = "https://api.exchangerate.host/symbols";
 	
-	public String apiConnection(String apiUrl) 
+	public String apiConnection(String url) 
 	{
 		StringBuilder informacion = new StringBuilder();
 		
@@ -66,26 +68,6 @@ public class Exchange {
 		Collections.sort(symbolsArray);
 		
 		return symbolsArray;
-	}
-	
-	public ArrayList<String> getDescriptions(String json) {
-		
-		ArrayList<String> descriptionsArray = new ArrayList<String>();
-		
-		
-		JSONObject jsonObject = new JSONObject(json.toString());
-		JSONObject symbolsObject = jsonObject.getJSONObject("symbols");
-		
-		
-		for (String code : symbolsObject.keySet()) {
-			JSONObject currencyObject = symbolsObject.getJSONObject(code);
-			String currencyCode = currencyObject.getString("code");
-			descriptionsArray.add(currencyCode);
-		}
-		
-		Collections.sort(descriptionsArray);
-		
-		return descriptionsArray;
 	}
 	
 	
