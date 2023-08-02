@@ -1,0 +1,5 @@
+package com.aluraconversor.util;
+
+public class ValidationUtils {
+
+}
